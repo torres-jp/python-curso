@@ -35,6 +35,13 @@ print("Convierte la cadena \"12345\" a un entero y luego a un float.")
 print("Convierte el float 3.99 a un entero. ¿Qué ocurre?")
 
 ### Completa aquí
+cadena = "12345"
+print(int(cadena)) # 12345
+print(float(cadena)) # 12345.0
+
+float_num = 3.99
+print(int(float_num)) # 3, se pierde la parte decimal al convertir a entero
+print(round(float_num)) # 4, redondea al número entero más cercano
 
 print("--------------")
 
@@ -45,6 +52,11 @@ print("Usa f-strings para imprimir una presentación.")
 # "Hola! Me llamo midudev y tengo 39 años, mido 1.70 metros"
 
 ### Completa aquí
+nombre = 'Jhon'
+age = 40
+height = 1.89
+print(f'Hola! Me llamo {nombre} y tengo {age} años, mido {height} metros.')
+
 
 print("--------------")
 
@@ -53,3 +65,8 @@ print("1. Crea una variable con el número PI (sin asignar una variable)")
 print("2. Redondea el número con round()")
 print("3. Haz la división entera entre el número que te salió y el número 2")
 print("4. El resultado debería ser 1")
+
+### Completa aquí
+pi = 3.14159
+print(round(pi)) # 3
+print(3 // 2) # 1
