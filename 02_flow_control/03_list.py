@@ -60,5 +60,14 @@ print(lista_1) # [20,2,3,4,5,6,7]
 # Añadir elementos a la lista
 lista_2 = [1,2,3,4,5,6]
 
+# forma larga
 lista_2 = lista_2 + [7,8,9,10] # concatenacion de listas
 print(lista_2) # [1,2,3,4,5,6,7,8,9,10]
+
+# forma corta
+lista_1 += [11,12,13,14,15] # concatenacion de listas
+print(lista_1) 
+
+# Recuperar longitud
+print('\n Longitud de la lista: ')
+print(len(lista_1)) # 15
