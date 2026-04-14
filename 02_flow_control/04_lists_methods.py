@@ -57,6 +57,7 @@ numbers = [5, 2, 9, 1, 5, 6,201,100,50,75,25,10]
 sorted_numbers = sorted(numbers) # Devuelve una nueva lista ordenada
 print(sorted_numbers)
 
+
 print('\n Ordenar elementos en la lista de cadenas de texto: ')
 frutas = ["Manzana", "banana", "Pera", "uva", "durazno"]
 sorted_frutas = sorted(frutas) # Ordena la lista de cadenas de texto
