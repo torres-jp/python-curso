@@ -2,6 +2,9 @@
 # EJERCICIOS (while)
 ###
 
+import os
+os.system('cls')
+
 # Ejercicio 1: Cuenta atrás
 # Imprime los números del 10 al 1 usando un bucle while.
 print("\nEjercicio 1:")
@@ -28,6 +31,14 @@ print(f"La suma de los números pares hasta 20 es: {suma_pares}")
 # El factorial de un número entero positivo es el producto de todos los números del 1 al ese número. Por ejemplo, el factorial de 5
 # 5! = 5 x 4 x 3 x 2 x 1 = 120.
 print("\nEjercicio 3:")
+num_original = int(input("Ingrese un número entero positivo: "))
+numero = num_original
+factorial = 1
+while numero > 0:
+    factorial *= numero
+    numero -= 1
+print(f"El factorial de {num_original} es: {factorial}")
+
 
 # Ejercicio 4: Validación de contraseña
 # Pide al usuario que introduzca una contraseña.
@@ -35,13 +46,31 @@ print("\nEjercicio 3:")
 # Usa un bucle while para seguir pidiendo la contraseña hasta que cumpla con los requisitos.
 # Si la contraseña es válida, imprime "Contraseña válida".
 print("\nEjercicio 4:")
+password = ""
+while len(password) < 8:
+    password = input("Ingrese una contraseña (minimo 8 caracteres): ")
+    if len(password) < 8:
+        print("La contraseña debe tener al menos 8 caracteres.")
+print("Contraseña válida")
+
 
 # Ejercicio 5: Tabla de multiplicar
 # Pide al usuario que introduzca un número.
 # Imprime la tabla de multiplicar de ese número (del 1 al 10) usando un bucle while.
 print("\nEjercicio 5:")
+num = int(input('Ingrese un numero: '))
+while num <= 10:
+    print(f'{num} x {num} = {num * num}')
+    num += 1
+
 
 # Ejercicio 6: Números primos hasta N
 # Pide al usuario que introduzca un número entero positivo N.
 # Imprime todos los números primos menores o iguales que N usando un bucle while.
 print("\nEjercicio 6:")
+num = int(input('Ingrese un numero: '))
+while num <= 10:
+    print(f'{num} x {num} = {num * num}')
+    num += 1
+
+
