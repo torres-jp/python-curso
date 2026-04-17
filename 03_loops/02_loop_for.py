@@ -37,3 +37,20 @@ for letra in letras: # 1ra iteracion
         print(f'{letra}-{numero}') # A-1
     # 2da iteracion
     # 3ra iteracion
+
+# Break
+# animales = ['perro', 'gato', 'leon', 'tigre', 'elefante']
+# for idx,animal in enumerate(animales):
+#     print(animal)
+#     if animal == 'tigre':
+#         print(f'El animal {animal} se encuentra en la posicion {idx}')
+#         break
+
+
+# Continue
+animales = ['perro', 'gato', 'leon', 'tigre', 'elefante']
+for idx,animal in enumerate(animales):
+    if animal == 'tigre':
+        continue
+    
+    print(animal)
