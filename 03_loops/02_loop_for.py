@@ -39,12 +39,12 @@ for letra in letras: # 1ra iteracion
     # 3ra iteracion
 
 # Break
-# animales = ['perro', 'gato', 'leon', 'tigre', 'elefante']
-# for idx,animal in enumerate(animales):
-#     print(animal)
-#     if animal == 'tigre':
-#         print(f'El animal {animal} se encuentra en la posicion {idx}')
-#         break
+animales = ['perro', 'gato', 'leon', 'tigre', 'elefante']
+for idx,animal in enumerate(animales):
+    print(animal)
+    if animal == 'tigre':
+        print(f'El animal {animal} se encuentra en la posicion {idx}')
+        break
 
 
 # Continue
@@ -54,3 +54,15 @@ for idx,animal in enumerate(animales):
         continue
     
     print(animal)
+
+
+# Comprension de listas
+# Es una forma concisa de crear listas
+
+letras =  ['A','B','C','D','E','F']
+letras_minusculas = [letra.lower() for letra in letras]
+print(letras_minusculas)
+
+## Muestra los numeros pares de una lista
+pares = [num for num in [1,2,3,4,5,6,7,8,9,10] if num % 2 == 0]
+print(pares)
