@@ -1,4 +1,4 @@
-03:23:00
+03:37:00
 # 🐍 Curso de Python: Desde Básicos hasta Web Scraping
 
 ¡Bienvenido a este repositorio! Este es un curso completo de Python diseñado para llevarte desde los conceptos fundamentales hasta técnicas avanzadas como el web scraping. A lo largo del curso, encontrarás explicaciones detalladas, ejemplos prácticos y una serie de ejercicios para reforzar lo aprendido.
