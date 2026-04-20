@@ -29,3 +29,18 @@ nums = range(10)
 
 # for num in range(10,0,-1):
 #     print(num)
+
+# creando una lista con range().
+nums = range(10)
+list_of_nums = list(nums)
+print(list_of_nums)
+
+
+contador = 0
+while contador < 5:
+    print('Hacer 5 veces algo.')
+    contador += 1
+    
+print('\n con for')
+for _ in range(5):
+    print('Hacer 5 veces algo.')
