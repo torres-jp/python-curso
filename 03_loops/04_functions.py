@@ -83,3 +83,23 @@ describir_persona(30, "hombre", "jhon")
 describir_persona(sexo="hombre", edad=30, nombre="Snow")
 
 # Argumentos de longitud de variables (*args)
+def sumar_numeros(*args):
+    suma = 0
+    for numero in args:
+        suma += numero
+    return suma
+
+print(sumar_numeros(1,2,3,4,5,6,7,8,9,10))
+print('\n')
+
+
+# Argumentos de clave valor  variable (**kwargs)
+def mostrar_informacion_de(**kwargs):
+    for clave,valor in kwargs.items():
+        print(f'{clave}: {valor}')
+
+mostrar_informacion_de(nombre="jhon",edad=30,sexo="hombre")
+print('\n')
+mostrar_informacion_de(nombre="Wick",edad=30,pais='USA')
+print('\n')
+mostrar_informacion_de(nombre="Bond",es_mayor=True,sexo="mujer")
