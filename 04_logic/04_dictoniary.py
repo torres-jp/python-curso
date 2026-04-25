@@ -40,4 +40,28 @@ print(persona)
 
 # Sobreescribir un diccionario con otro diccionario
 a = {"nombre": "Gato", "edad": "33"}
-b = {"nombre": "Perro", "edad": 55}
+b = {"nombre": "Perro", "es_estudiante": True}
+
+a.update(b)
+print(a)
+
+
+# Comprobar si existe una propiedad
+print("name" in persona)  # False
+print("nombre" in persona)  # True
+
+# Obtener todas las claves
+print("\n Obtener todas las claves: ")
+print(persona.keys())
+
+# Obtener todos los valores
+print("\n Obtener todos los valores: ")
+print(persona.values())
+
+# Obtener todos los pares clave-valor
+print("\n Obtener todos los pares clave-valor: ")
+print(persona.items())
+
+
+for key, value in persona.items():
+    print(f"{key}: {value}")

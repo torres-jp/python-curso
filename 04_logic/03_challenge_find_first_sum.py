@@ -7,14 +7,25 @@ goal = 8
 find_first_sum(nums, goal)  # [2, 3]
 """
 
+import os
 
+os.system("cls")
+
+# def find_first_sum(nums, goal):
+#     for i in range(len(nums)):
+#         for j in range(i + 1, len(nums)):
+#             if nums[i] + nums[j] == goal:
+#                 return [i, j]
+
+#     return None  # No se encontro ninguna combinacion
+
+
+### Solucion usando diccionarios.
 def find_first_sum(nums, goal):
-    for i in range(len(nums)):
-        for j in range(i + 1, len(nums)):
-            if nums[i] + nums[j] == goal:
-                return [i, j]
+    seen = {}  # diccionario para guardar numero y su indice.
 
-    return None  # No se encontro ninguna combinacion
+    for i, value in enumerate(nums):
+        print(f"index: {i}, value: {value}")
 
 
 nums = [4, 5, 6, 2]
