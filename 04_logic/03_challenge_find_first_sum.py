@@ -7,9 +7,6 @@ goal = 8
 find_first_sum(nums, goal)  # [2, 3]
 """
 
-import os
-
-os.system("cls")
 
 # def find_first_sum(nums, goal):
 #     for i in range(len(nums)):
@@ -25,9 +22,16 @@ def find_first_sum(nums, goal):
     seen = {}  # diccionario para guardar numero y su indice.
 
     for i, value in enumerate(nums):
-        print(f"index: {i}, value: {value}")
+        missing = goal - value
+        if missing in seen:
+            return [seen[missing], i]
+
+        seen[value] = i  # guardar el numero actual de los vistos
+
+    return None  # No se encontro ninguna combinacion
 
 
 nums = [4, 5, 6, 2]
 goal = 8
-print(find_first_sum(nums, goal))
+result = find_first_sum(nums, goal)
+print(result)
