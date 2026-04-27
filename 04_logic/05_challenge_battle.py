@@ -34,3 +34,6 @@ resultado = battle(lista_a, lista_b)  # -> "x"
 # - 4 vs 2+2: empate
 # Resultado: "x"
 """
+
+lista_a = [4, 4, 4]
+lista_b = [2, 8, 2]
