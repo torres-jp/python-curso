@@ -105,3 +105,6 @@ if found_ia:
 text = "hola mundo, hola de nuevo!!"
 pattern = "hola"
 replacement = "Adios"
+
+new_text = re.sub(pattern, replacement, text)
+print(new_text)
