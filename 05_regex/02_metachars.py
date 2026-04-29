@@ -41,6 +41,8 @@ matches = re.findall(pattern, text)
 # print(matches)
 
 # \d: coincide con calquier digito del 0-9
-text = "El numero de telefono es 65815615781"
-found = re.findall(r"\d", text)
-print(found)
+text = "El numero de telefono es 321456"
+found = re.findall(r"\d{6}", text)
+# print(found)
+
+# EJERCICIO: Detectar si hay un numero de telefono en el texto gracias al prefijo +54
