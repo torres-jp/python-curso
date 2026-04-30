@@ -84,11 +84,40 @@ text = "Hola mundo"
 pattern = r"mundo$"
 valid = re.search(pattern, text)
 
-if valid:
-    print("El texto es valido")
-else:
-    print("El texto no es valido")
+# if valid:
+#     print("El texto es valido")
+# else:
+#     print("El texto no es valido")
 
 
 # EJERCICIO
 # Valida que un correo sea de gmail
+text = "correo@gmail.com"
+pattern = r"@gmail.com$"
+valid = re.search(pattern, text)
+
+# if valid:
+#     print("El correo es valido")
+# else:
+#     print("El correo no es valido")
+
+
+# EJERCICIOS: tenemos una lista de archivos y necesitamos saber los nombres de los ficheros
+# con la extension .txt
+files = "fiile1.txt file2.pdf web-off.webpp  secret.txt"
+pattern = r"\w+\.txt"
+found = re.findall(pattern, files)
+# print(found)
+
+
+# \b: coincide con el principio o final de una palabra
+text = "casa coche perro acasa acasado casada casado, casa"
+pattern = r"\bcasa\b"
+found = re.findall(pattern, text)
+# print(found)
+
+# |: Coincide con cualquiera de las dos opciones
+texto = "pera, banana, manzana, frutilla"
+pattern = r"banana|manzana"
+found = re.findall(pattern, texto)
+print(found)
