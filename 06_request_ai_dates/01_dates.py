@@ -1,55 +1,52 @@
-# Hacer peticiones a una API en python
-# con y sin dependencias
+# Trabajando fechas y horas en python
+import os
+from datetime import datetime, timedelta
+import locale
 
-# 1. Sin dependencias (dificil y sin dependencias)
-import requests
-import urllib.request
-import json
+os.system("cls")
 
-api_posts = "https://jsonplaceholder.typicode.com/posts"
+# 1. Obtener la fecha y hora actual
+now = datetime.now()
+print(f"Fecha y hora actual: {now}")
 
-# try:
-# response = urllib.request.urlopen(api_posts)
-#  data = response.read()
-#   json_data = json.loads(data.decode("utf-8"))
-# print(json_data)
-#    response.close()
-# except urllib.error.URLError as error:
-# print(f"Error: {error}")
+# 2. Obtener una hora y fecha especifica.
+specific_date = datetime(2026, 11, 29, 00, 00)
+print(f"Fecha especifica: {specific_date}")
 
-# 2. Con dependencias (facil y con dependencias)
-print("\nGET con requests")
+# 3. Formatear fechas
+# se usa el metodo strftime( formato )
+locale.setlocale(locale.LC_TIME, "es_ES.UTF-8")
 
-api_posts = "https://jsonplaceholder.typicode.com/posts"
-# response = requests.get(api_posts)
-# print(response.json())
+formated_date = now.strftime("%A - %B - %Y %H:%M:%S")
+print(f"Fecha formateada: {formated_date}")
+
+# 4. Operaciones con fechas (sumar/restar dias, minutos , meses , horas)
+yesterday = datetime.now() - timedelta(days=1)
+tomorrow = datetime.now() + timedelta(days=1)
+
+print(f"Fecha de ayer: {yesterday}")
+print(f"Fecha de mañana: {tomorrow}")
+
+one_hour_later = datetime.now() + timedelta(hours=1)
+print(f"Fecha dentro de una hora: {one_hour_later}")
+
+# 5. Obtener los componentes indivuales de una fecha
+year = now.year
+print(f"Año: {year}")
+month = now.month
+print(f"Mes: {month}")
+day = now.day
+print(f"Día: {day}")
+hour = now.hour
+print(f"Hora: {hour}")
+minute = now.minute
+print(f"Minuto: {minute}")
+second = now.second
+print(f"Segundo: {second}")
 
 
-# 3. POST
-print("\nPOST con requests")
-input = {
-    "title": "foo",
-    "body": "bar",
-    "userId": 12,
-}
-
-response = requests.post(api_posts, json=input)
-# print(response.json())
-
-
-# 4. PUT
-print("\nPUT con requests")
-try:
-    response = requests.put(
-        "https://jsonplaceholder.typicode.com/posts",
-        json={
-            "id": 1,
-            "title": "foo",
-            "body": "bar",
-            "userId": 1,
-        },
-    )
-    print(response.status_code)
-except requests.exceptions.RequestException as error:
-    print(f"Error: {error}")
-print(response.json())
+# 6. Calcular diferencia entre 2 fechas
+date1 = datetime.now()
+date2 = datetime(2026, 11, 29)
+diff = date2 - date1
+print(f"Diferencia: {diff.days} dias")
