@@ -25,7 +25,6 @@ def find_first_sum(nums, goal):
         missing = goal - value
         if missing in seen:
             return [seen[missing], i]
-
         seen[value] = i  # guardar el numero actual de los vistos
 
     return None  # No se encontro ninguna combinacion
