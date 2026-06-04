@@ -24,7 +24,7 @@ cursos_db = []
 
 
 # CRUD: READ (Obtener todos los cursos)
-@app.get("/cursos/", response_model=List[Curso])
+@app.get("/cursos/", response_model=list[Curso])
 def obtener_cursos():
     return cursos_db
 
