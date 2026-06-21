@@ -1,10 +1,10 @@
-from tkinter import Canvas, Label, Tk
+from tkinter import ALL, Button, Canvas, Label, Tk
 import random
 
 
 GAME_WIDTH = 700
 GAME_HEIGHT = 700
-SPEED = 50
+SPEED = 100
 SPACE_SIZE = 50
 BODY_PARTS = 3
 SNAKE_COLOR = "#00FF00"
@@ -76,7 +76,10 @@ def next_turn(snake, food):
 
         del snake.squares[-1]
 
-    window.after(SPEED, next_turn, snake, food)
+    if check_collisions(snake):
+        game_over()
+    else:
+        window.after(SPEED, next_turn, snake, food)
 
 
 def change_direction(new_direction):
@@ -99,12 +102,45 @@ def change_direction(new_direction):
             direction = new_direction
 
 
-def check_collisions():
-    pass
+def check_collisions(snake):
+    x, y = snake.coordinates[0]
+    if x < 0 or x >= GAME_WIDTH:
+        return True
+    elif y < 0 or y >= GAME_HEIGHT:
+        return True
+
+    for body_part in snake.coordinates[1:]:
+        if x == body_part[0] and y == body_part[1]:
+            return True
+
+    return False
 
 
 def game_over():
-    pass
+    canvas.delete(ALL)
+    canvas.create_text(
+        canvas.winfo_width() / 2,
+        canvas.winfo_height() / 2,
+        font=("consolas", 70),
+        text="GAME OVER",
+        fill="red",
+        tag="gameover",
+    )
+    restart_button.config(state="normal")
+
+
+def restart_game():
+    global snake, food, score, direction
+
+    canvas.delete(ALL)
+    score = 0
+    direction = "down"
+    label.config(text="Score: {}".format(score))
+    restart_button.config(state="disabled")
+
+    snake = Snake()
+    food = Food()
+    next_turn(snake, food)
 
 
 window = Tk()
@@ -118,6 +154,15 @@ direction = "down"
 
 label = Label(window, text="Score: {}".format(score), font=("consolas", 40))
 label.pack()
+
+restart_button = Button(
+    window,
+    text="Restart",
+    font=("consolas", 20),
+    state="disabled",
+    command=restart_game,
+)
+restart_button.pack()
 
 canvas = Canvas(window, bg=BACKGROUND_COLOR, height=GAME_HEIGHT, width=GAME_WIDTH)
 canvas.pack()
